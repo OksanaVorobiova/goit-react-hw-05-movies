@@ -9,7 +9,7 @@ export const Home = () => {
     async function loadFilms() {
       try {
         const response = await getTrending();
-        console.log(response);
+        // console.log(response);
         response ? setFilms([...response]) : console.log('no films today');
         //console.log(films);
       } catch (error) {

@@ -6,12 +6,14 @@ const ENDPOINT = `https://api.themoviedb.org/3`;
 axios.defaults.baseURL = ENDPOINT;
 axios.defaults.params = {
   api_key: API_KEY,
-  // media_type: 'movie',
-  // time_window: 'day',
+  language: 'en-US',
 };
 
-export const getTrending = async () => {
-  const res = await axios.get(`/trending/movie/day`);
-  //console.log(res.data.results);
-  return res.data.results;
+export const getCast = async id => {
+  try {
+    const res = await axios.get(`${ENDPOINT}/movie/${id}/credits`);
+    return res.data.cast;
+  } catch (error) {
+    console.log(error);
+  }
 };

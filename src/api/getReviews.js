@@ -6,12 +6,15 @@ const ENDPOINT = `https://api.themoviedb.org/3`;
 axios.defaults.baseURL = ENDPOINT;
 axios.defaults.params = {
   api_key: API_KEY,
+  language: 'en-US',
+  page: 1,
 };
 
-export const getDetails = async id => {
+export const getReviews = async id => {
   try {
-    const res = await axios.get(`${ENDPOINT}/movie/${id}`);
-    return res.data;
+    const res = await axios.get(`${ENDPOINT}/movie/${id}/reviews`);
+    console.log(res);
+    return res.data.results;
   } catch (error) {
     console.log(error);
   }
