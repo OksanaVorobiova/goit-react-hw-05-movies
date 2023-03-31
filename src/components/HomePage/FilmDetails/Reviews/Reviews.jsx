@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from 'api/getReviews';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
 
@@ -22,13 +22,18 @@ export const Reviews = () => {
 
   return (
     <ul>
-      {reviews &&
+      {reviews.length > 0 ? (
         reviews.map(({ author, content, created_at }) => (
           <li key={created_at}>
             <p>Author: {author}</p>
             <p>{content}</p>
           </li>
-        ))}
+        ))
+      ) : (
+        <p>No reviews</p>
+      )}
     </ul>
   );
 };
+
+export default Reviews;

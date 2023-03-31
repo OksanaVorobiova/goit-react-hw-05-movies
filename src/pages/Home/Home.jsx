@@ -1,8 +1,9 @@
 import { getTrending } from 'api/getPopular';
 import { useEffect, useState } from 'react';
-import { TrendingFilms } from 'components/HomePage/TrendingFilms';
+import { TrendingFilms } from 'components/HomePage/TrendingFilms/TrendingFilms';
+import { HomePage } from './Home.styled';
 
-export const Home = () => {
+const Home = () => {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
@@ -22,8 +23,12 @@ export const Home = () => {
 
   return (
     <main>
-      <h1>Trending today</h1>
-      <TrendingFilms films={films} />
+      <HomePage>
+        <h1>Trending today</h1>
+        <TrendingFilms films={films} />
+      </HomePage>
     </main>
   );
 };
+
+export default Home;
