@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getFiltered } from 'api/getFiltered';
 import { useSearchParams } from 'react-router-dom';
+import { MoviesPage } from './Movies.styled';
+import {
+  TrendingFilmsList,
+  StyledFilmLink,
+} from 'components/HomePage/TrendingFilms/TrendingFilms.styled';
 
 const Movies = () => {
   const [films, setFilms] = useState([]);
@@ -31,20 +36,20 @@ const Movies = () => {
   };
 
   return (
-    <>
+    <MoviesPage>
       <form onSubmit={handleSubmit}>
         <input name="search" onChange={handleChange} />
         <button type="submit">Search</button>
       </form>
-      <ul>
+      <TrendingFilmsList>
         {films &&
           films.map(({ title, id }) => (
             <li key={id}>
-              <Link to={`${id}`}>{title}</Link>
+              <StyledFilmLink to={`${id}`}>{title}</StyledFilmLink>
             </li>
           ))}
-      </ul>
-    </>
+      </TrendingFilmsList>
+    </MoviesPage>
   );
 };
 

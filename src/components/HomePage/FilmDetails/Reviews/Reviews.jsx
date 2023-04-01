@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from 'api/getReviews';
+import { ReviewsList } from './Reviews.styled';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const Reviews = () => {
   }, [id]);
 
   return (
-    <ul>
+    <ReviewsList>
       {reviews.length > 0 ? (
         reviews.map(({ author, content, created_at }) => (
           <li key={created_at}>
@@ -32,7 +33,7 @@ const Reviews = () => {
       ) : (
         <p>No reviews</p>
       )}
-    </ul>
+    </ReviewsList>
   );
 };
 
