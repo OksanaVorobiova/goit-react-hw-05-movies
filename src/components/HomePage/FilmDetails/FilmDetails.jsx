@@ -36,7 +36,7 @@ const FilmDetails = () => {
           setFilmDetails({ ...response });
           setStatus(STATUS.RESOLVED);
         } else {
-          setStatus(STATUS.IDLE);
+          setStatus(STATUS.REJECTED);
           Notify.info('No film details');
         }
       } catch (error) {
