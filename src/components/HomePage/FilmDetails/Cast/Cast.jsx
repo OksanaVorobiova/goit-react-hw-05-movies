@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Notify } from 'notiflix';
 import { useEffect, useState } from 'react';
-import { getCast } from 'api/getCast';
+import { getCast } from 'api/getInfo';
 import { CastList } from './Cast.styled';
 import { Spinner } from 'components/Spinner/Spinner';
 import NotFound from 'pages/NotFound/NotFound';

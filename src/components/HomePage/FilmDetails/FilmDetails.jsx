@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getDetails } from 'api/getDetails';
+import { getDetails } from 'api/getInfo';
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { FilmDetailsSection } from './FilmDetails.styled';

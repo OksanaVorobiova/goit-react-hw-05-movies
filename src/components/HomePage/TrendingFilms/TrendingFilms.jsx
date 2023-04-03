@@ -1,4 +1,3 @@
-//import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { TrendingFilmsList, StyledFilmLink } from './TrendingFilms.styled';
 

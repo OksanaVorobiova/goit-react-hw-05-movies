@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Notify } from 'notiflix';
 import { useParams } from 'react-router-dom';
-import { getReviews } from 'api/getReviews';
+import { getReviews } from 'api/getInfo';
 import { ReviewsList } from './Reviews.styled';
 import { Spinner } from 'components/Spinner/Spinner';
 import NotFound from 'pages/NotFound/NotFound';

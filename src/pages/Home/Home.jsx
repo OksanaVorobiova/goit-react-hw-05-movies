@@ -1,4 +1,4 @@
-import { getTrending } from 'api/getPopular';
+import { getTrending } from 'api/getInfo';
 import { useEffect, useState } from 'react';
 import { TrendingFilms } from 'components/HomePage/TrendingFilms/TrendingFilms';
 import { HomePage } from './Home.styled';
