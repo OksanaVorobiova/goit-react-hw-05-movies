@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ReviewsList = styled.ul`
+  position: absolute;
   list-style-type: none;
   background-color: #fef6f2;
   max-width: 100%;

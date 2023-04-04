@@ -3,12 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 export const TrendingFilmsList = styled.ul`
   list-style-type: none;
-  max-width: 100%;
-  margin: 20px 15px;
+  width: 90%;
+  // box-sizing: border-box;
+  margin: 0;
   padding: 10px;
   border: 3px dashed #ef9b70;
   border-radius: 8px;
   margin-top: 10px;
+  //overflow: hidden;
 
   li {
     padding: 6px;

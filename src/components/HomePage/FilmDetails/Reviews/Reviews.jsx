@@ -42,7 +42,11 @@ const Reviews = () => {
 
   return (
     <>
-      {status === STATUS.PENDING && <Spinner />}
+      {status === STATUS.PENDING && (
+        <ReviewsList>
+          <Spinner />
+        </ReviewsList>
+      )}
       {status === STATUS.RESOLVED && (
         <ReviewsList>
           {reviews.length > 0 ? (

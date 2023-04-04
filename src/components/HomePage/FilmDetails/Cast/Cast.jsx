@@ -5,6 +5,7 @@ import { getCast } from 'api/getInfo';
 import { CastList } from './Cast.styled';
 import { Spinner } from 'components/Spinner/Spinner';
 import NotFound from 'pages/NotFound/NotFound';
+import defaultImg from '../../../../images/placeholder.svg';
 
 const STATUS = {
   IDLE: 'idle',
@@ -40,17 +41,29 @@ const Cast = () => {
     loadCast(id);
   }, [id]);
 
+  //const { name, character, profile_path, cast_id } = actor;
+
   return (
     <>
-      {status === STATUS.PENDING && <Spinner />}
+      {status === STATUS.PENDING && (
+        <CastList>
+          <Spinner />
+        </CastList>
+      )}
       {status === STATUS.RESOLVED && (
         <CastList>
           {actor &&
             actor.map(({ name, character, profile_path, cast_id }) => (
               <li key={cast_id}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+                  src={
+                    profile_path
+                      ? `https://image.tmdb.org/t/p/w200/${profile_path}`
+                      : defaultImg
+                  }
                   alt={name}
+                  width="200"
+                  height="300"
                 />
                 <p>{name}</p>
                 <p>{character}</p>
