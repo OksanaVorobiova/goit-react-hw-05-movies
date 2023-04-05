@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const MoviesPage = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
   top: 60px;
-  background-color: rgb(254, 246, 242);
-  min-width: 100vw;
+  //padding: 15px 20px;
+  //background-color: #fef6f2;
+  width: 100vw;
   padding-top: 20px;
   padding-bottom: 15px;
 
